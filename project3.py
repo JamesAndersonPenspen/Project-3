@@ -25,13 +25,13 @@ def scrape_books(url):
             # Extract data for every book
             for book in chosen_data:       #Text Text__title1  #BookPageTitleSection__title
                 # Extract title based on class
-                title = book.find('span', _class='Text Text__title1').text.strip()
+                title = book.find('span', class_='Text Text__title1').text.strip()
 
                 # Extract author based on class
-                author = book.find('div', _class='').text.strip()
+                author = book.find('div', class_='').text.strip()
 
                 # Extract price based on class
-                price = book.find('span', _class='BookPage__jumpNav u-sr-only').text.strip()
+                price = book.find('span', class_='BookPage__jumpNav u-sr-only').text.strip()
 
                 # Write data to CSV
                 writer.writerow({'Title': title, 'Author': author, 'Price': price})
